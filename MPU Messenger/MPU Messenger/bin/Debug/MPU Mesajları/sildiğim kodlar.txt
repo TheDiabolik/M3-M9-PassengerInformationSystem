@@ -1,0 +1,115 @@
+ //public void InvokeService(int a, int b)
+        //{
+        //    //Calling CreateSOAPWebRequest method  
+        //    HttpWebRequest request = CreateSOAPWebRequest();
+
+        //    XmlDocument SOAPReqBody = new XmlDocument();
+        //    //SOAP Body Request  
+        //    //SOAPReqBody.Load("0001-Client To MPU AddVariables Request Message.txt");
+        //    //SOAPReqBody.Load("0002-Client To MPU AddTraceDefinition Request Message.txt");
+        //    //SOAPReqBody.Load("0003-Client To MPU StartDashboard Request Message.txt");
+        //    SOAPReqBody.Load("0017-Client To MPU GetVariablesInformation With New Variables Request Message.txt");
+
+
+
+        //    using (Stream stream = request.GetRequestStream())
+        //    {
+        //        SOAPReqBody.Save(stream);
+        //    }
+        //    //Geting response from request  
+        //    using (WebResponse Serviceres = request.GetResponse())
+        //    {
+        //        using (StreamReader rd = new StreamReader(Serviceres.GetResponseStream()))
+        //        {
+        //            //reading stream  
+        //            var ServiceResult = rd.ReadToEnd();
+        //            //writting stream result on console  
+        //            Debug.WriteLine(ServiceResult);
+
+        //            ParseGetVariablesInformationResponseMessage(ServiceResult);
+        //            Console.ReadLine();
+        //        }
+        //    }
+        //} 
+
+        public void ParseGetVariablesInformationResponseMessage(string soapMessage)
+        {
+            // SOAP mesajını XML olarak yükleyin
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(soapMessage);
+
+            // SOAP mesajını işleyin
+            XmlNode bodyNode = xmlDoc.GetElementsByTagName("SOAP-ENV:Body")[0];
+            if (bodyNode != null)
+            {
+                XmlNode responseNode = bodyNode.FirstChild;
+                if (responseNode != null && responseNode.LocalName == "GetVariablesInformationResponse")
+                {
+                    for (int i = 0; i < responseNode.ChildNodes.Count; i++)
+                    {
+                        XmlNode root = responseNode.ChildNodes[i];
+
+                        //Display the contents of the child nodes.
+                        if (root.HasChildNodes)
+                        {
+                            MPUToClientProperties.Coming coming = new MPUToClientProperties.Coming();
+
+                            for (int j = 0; j < root.ChildNodes.Count; j++)
+                            {
+                                if (root.ChildNodes[j].Name == "varId")
+                                {
+                                    coming.varId = root.ChildNodes[j].InnerText;
+                                }
+                                else if (root.ChildNodes[j].Name == "oForceOption")
+                                {
+                                    coming.oForceOption = root.ChildNodes[j].InnerText;
+                                }
+                                else if (root.ChildNodes[j].Name == "oVarType")
+                                {
+                                    coming.oVarType = root.ChildNodes[j].InnerText;
+                                }
+                                else if (root.ChildNodes[j].Name == "tabSize")
+                                {
+                                    coming.tabSize = root.ChildNodes[j].InnerText;
+                                }
+                                else if (root.ChildNodes[j].Name == "asciiData")
+                                {
+                                    coming.asciiData = root.ChildNodes[j].InnerText;
+                                }
+                            }
+
+                            m_oVariablesInformations.Add(coming);
+
+                        }
+                    }
+                }
+            }
+            else
+            {
+                DisplayManager.RichTextBoxInvoke(m_richTextBox, "SOAP Response not found.");
+            }
+
+
+        }
+		
+		
+		 public void WebClientRequestMethod(string content)
+        {
+            try
+            {
+                using (WebClient wClient = new WebClient())
+                {
+                    wClient.Headers.Add("Content-Type", "text/xml; charset=utf-8");
+                    wClient.Headers.Add("SOAPAction", "http://transport.alstom.com/webservices/extendedSymbolism/AddVariables");
+                    var result = wClient.UploadData("http://localhost:52523/Common.asmx"
+                        , "POST"
+                        , Encoding.UTF8.GetBytes(content));
+                    var response = System.Text.Encoding.Default.GetString(result);
+                    Console.WriteLine(response);
+                }
+            }
+            catch (WebException excp)
+            {
+                Console.WriteLine(excp.Message);
+            }
+        }

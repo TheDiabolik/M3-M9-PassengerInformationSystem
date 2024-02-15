@@ -1,0 +1,249 @@
+  ///MPU_taskmpu/drs1/VB_DRS_DoorOpen_A1
+                        //if (item.varId == "25165937" && item.asciiData == "1")
+                        //{
+                        //    m_MPUToClientProperties.A1VehicleDoorStatus = true;
+                        //}
+                        //else if (item.varId == "25165937" && item.asciiData == "0")
+                        //{
+                        //    m_MPUToClientProperties.A1VehicleDoorStatus = false;
+                        //}
+                        ///MPU_taskmpu/drs1/VB_DRS_DoorOpen_A2
+                        //if (item.varId == "25165938" && item.asciiData == "1")
+                        //{
+                        //    m_MPUToClientProperties.A2VehicleDoorStatus = true;
+                        //}
+                        //else if (item.varId == "25165938" && item.asciiData == "0")
+                        //{
+                        //    m_MPUToClientProperties.A2VehicleDoorStatus = false;
+                        //}
+                        ///MPU_taskmpu/drs1/VB_DRS_DoorOpen_C1
+                        //if (item.varId == "25165939" && item.asciiData == "1")
+                        //{
+                        //    m_MPUToClientProperties.C1VehicleDoorStatus = true;
+                        //}
+                        //else if (item.varId == "25165939" && item.asciiData == "0")
+                        //{
+                        //    m_MPUToClientProperties.C1VehicleDoorStatus = false;
+                        //}
+
+                        ///MPU_taskmpu/drs1/VB_DRS_DoorOpen_B1
+                        //if (item.varId == "25165936" && item.asciiData == "1")
+                        //{
+                        //    m_MPUToClientProperties.B1VehicleDoorStatus = true;
+                        //}
+                        //else if (item.varId == "25165936" && item.asciiData == "0")
+                        //{
+                        //    m_MPUToClientProperties.B1VehicleDoorStatus = false;
+                        //}
+
+                        ///MPU_taskmpu/drs1/open_ext_drs1/VB_DRS_OpenDoorsLeft
+                        //if (item.varId == "25165941" && item.asciiData == "1")
+                        //{
+                        //    m_MPUToClientProperties.VB_DRS_OpenDoorsLeft = true;
+                        //}
+                        //else if (item.varId == "25165941" && item.asciiData == "0")
+                        //{
+                        //    m_MPUToClientProperties.VB_DRS_OpenDoorsLeft = false;
+                        //}
+
+                        // /MPU_taskmpu/drs1/open_ext_drs1/VB_DRS_OpenDoorsRight
+                        //if (item.varId == "25165954" && item.asciiData == "1")
+                        //{
+                        //    m_MPUToClientProperties.VB_DRS_OpenDoorsRight = true;
+                        //}
+                        //else if (item.varId == "25165954" && item.asciiData == "0")
+                        //{
+                        //    m_MPUToClientProperties.VB_DRS_OpenDoorsRight = false;
+                        //}
+						   // / MPU_taskmpu / drs1 / release_ext_drs2 / mpu_rel_ext_drs_trainline1 / VB_DRS_TLLeftDrsReleased
+                        //if (item.varId == "25165943" && item.asciiData == "1")
+                        //{
+                        //    m_MPUToClientProperties.VB_DRS_TLLeftDrsReleased = true;
+                        //}
+                        //else if (item.varId == "25165943" && item.asciiData == "0")
+                        //{
+                        //    m_MPUToClientProperties.VB_DRS_TLLeftDrsReleased = false;
+                        //}
+
+                        ///MPU_taskmpu/drs1/release_ext_drs2/mpu_rel_ext_drs_trainline1/VB_DRS_TLRightDrsReleased
+                        //if (item.varId == "25165944" && item.asciiData == "1")
+                        //{
+                        //    m_MPUToClientProperties.VB_DRS_TLRightDrsReleased = true;
+                        //}
+                        //else if (item.varId == "25165944" && item.asciiData == "0")
+                        //{
+                        //    m_MPUToClientProperties.VB_DRS_TLRightDrsReleased = false;
+                        //}
+						
+						  ///MPU_taskmpu/pai1/trigger_automatic_msg1/mpu_manage_distance_counter/VI_TBS_TrainSpeedKph
+                        /////burası düzeltilecek
+                        //if (item.varId == "25165949")
+                        //{
+                        //    m_MPUToClientProperties.VI_TBS_TrainSpeedKph = item.asciiData;
+                        //}
+
+                        // /MPU_taskmpu/pai1/trigger_automatic_msg1/mpu_manage_distance_counter/VI_PAI_DistanceCounter
+                        //if (item.varId == "25165858")
+                        //{
+                        //    m_MPUToClientProperties.VI_PAI_DistanceCounter = item.asciiData;
+                        //}
+						// /MPU_taskmpu/evr1/DD_CMileageKm_1
+                        if (item.varId == "25165957")
+                        {
+                            m_MPUToClientProperties.DD_CMileageKm_1 = item.asciiData;
+                        }
+						
+						 // /MPU_taskmpu/evr1/DD_CMileageKm_1
+                        //if (item.varId == "25165957")
+                        //{
+                        //    m_MPUToClientProperties.DD_CMileageKm_1 = item.asciiData;
+                        //}
+
+                        ///MPU_taskmpu/pai1/trigger_automatic_msg1/mpu_manage_distance_counter/VI_PAI_CurStationIdx
+                        //if (item.varId == "25165948")
+                        //{
+                        //    m_MPUToClientProperties.VI_PAI_CurStationIdx = item.asciiData;
+                        //} 
+
+
+         #region tren11
+
+                    //foreach (Coming item in m_oVariablesInformations)
+                    //{
+                    //    //A1
+                    //    if (item.varId == "25165929" && item.asciiData == " 1")
+                    //    {
+                    //        A1VehicleDoorStatus = true;
+                    //    }
+                    //    else if (item.varId == "25165929" && item.asciiData == "0")
+                    //    {
+                    //        A1VehicleDoorStatus = false;
+                    //    }
+                    //    //A2
+                    //    if (item.varId == "25165930" && item.asciiData == " 1")
+                    //    {
+                    //        A2VehicleDoorStatus = true;
+                    //    }
+                    //    else if (item.varId == "25165930" && item.asciiData == " 0")
+                    //    {
+                    //        A2VehicleDoorStatus = false;
+                    //    }
+                    //    //C1
+                    //    if (item.varId == "25165931" && item.asciiData == " 1")
+                    //    {
+                    //        C1VehicleDoorStatus = true;
+                    //    }
+                    //    else if (item.varId == "25165931" && item.asciiData == " 0")
+                    //    {
+                    //        C1VehicleDoorStatus = false;
+                    //    }
+
+                    //    //B1
+                    //    if (item.varId == "25165928" && item.asciiData == " 1")
+                    //    {
+                    //        B1VehicleDoorStatus = true;
+                    //    }
+                    //    else if (item.varId == "25165928" && item.asciiData == " 0")
+                    //    {
+                    //        B1VehicleDoorStatus = false;
+                    //    }
+
+                    //    ///MPU_taskmpu/drs1/open_ext_drs1/VB_DRS_OpenDoorsLeft
+                    //    if (item.varId == "25165933" && item.asciiData == " 1")
+                    //    {
+                    //        VB_DRS_OpenDoorsLeft = true;
+                    //    }
+                    //    else if (item.varId == "25165933" && item.asciiData == " 0")
+                    //    {
+                    //        VB_DRS_OpenDoorsLeft = false;
+                    //    }
+
+                    //    // /MPU_taskmpu/drs1/open_ext_drs1/VB_DRS_OpenDoorsRight
+                    //    if (item.varId == "25166026" && item.asciiData == " 1")
+                    //    {
+                    //        VB_DRS_OpenDoorsRight = true;
+                    //    }
+                    //    else if (item.varId == "25166026" && item.asciiData == " 0")
+                    //    {
+                    //        VB_DRS_OpenDoorsRight = false;
+                    //    }
+
+                    //    ///MPU_taskmpu/pai1/trigger_automatic_msg1/mpu_manage_distance_counter/VI_TBS_TrainSpeedKph
+                    //    /////burası düzeltilecek
+                    //    if (item.varId == "25165964")
+                    //    {
+                    //        VI_TBS_TrainSpeedKph = item.asciiData.Trim();
+                    //    }
+
+                    //    // /MPU_taskmpu/pai1/trigger_automatic_msg1/mpu_manage_distance_counter/VI_PAI_DistanceCounter
+                    //    if (item.varId == "25165879")
+                    //    {
+                    //        VI_PAI_DistanceCounter = item.asciiData.Trim();
+                    //    }
+
+                    //    // /MPU_taskmpu/evr1/DD_CMileageKm_1
+                    //    if (item.varId == "25166028")
+                    //    {
+                    //        DD_CMileageKm_1 = item.asciiData.Trim();
+                    //    }
+
+                    //    ///MPU_taskmpu/pai1/trigger_automatic_msg1/mpu_manage_distance_counter/VI_PAI_CurStationIdx
+                    //    if (item.varId == "25165963")
+                    //    {
+                    //        VI_PAI_CurStationIdx = item.asciiData.Trim();
+                    //    }
+                    //    // / MPU_taskmpu / drs1 / release_ext_drs2 / mpu_rel_ext_drs_trainline1 / VB_DRS_TLLeftDrsReleased
+                    //    if (item.varId == "25165935" && item.asciiData == " 1")
+                    //    {
+                    //        VB_DRS_TLLeftDrsReleased = true;
+                    //    }
+                    //    else if (item.varId == "25165935" && item.asciiData == " 0")
+                    //    {
+                    //        VB_DRS_TLLeftDrsReleased = false;
+                    //    }
+
+                    //    ///MPU_taskmpu/drs1/release_ext_drs2/mpu_rel_ext_drs_trainline1/VB_DRS_TLRightDrsReleased
+                    //    if (item.varId == "25165936" && item.asciiData == " 1")
+                    //    {
+                    //        VB_DRS_TLRightDrsReleased = true;
+                    //    }
+                    //    else if (item.varId == "25165936" && item.asciiData == " 0")
+                    //    {
+                    //        VB_DRS_TLRightDrsReleased = false;
+                    //    }
+
+                    //    StringBuilder sb = new StringBuilder();
+
+                    //    sb.AppendLine("****************************************************");
+
+                    //    sb.AppendLine("____________________________________________________");
+                    //    sb.AppendLine("Aracın Kilometresi : " + DD_CMileageKm_1.ToString());
+                    //    sb.AppendLine("Aracın Hızı(km/sa) : " + VI_TBS_TrainSpeedKph.ToString());
+                    //    sb.AppendLine("Mesafe Sayacı(m) : " + VI_PAI_DistanceCounter.ToString());
+                    //    sb.AppendLine("Mevcut İstasyon ID : " + VI_PAI_CurStationIdx.ToString());
+                    //    sb.AppendLine("____________________________________________________");
+
+
+                    //    sb.AppendLine("____________________________________________________");
+                    //    sb.AppendLine("Dizinin Sol Kapıları Serbestlik Durumu : " + VB_DRS_TLLeftDrsReleased.ToString());
+                    //    sb.AppendLine("Dizinin Sağ Kapıları Serbestlik Durumu : " + VB_DRS_TLRightDrsReleased.ToString());
+                    //    sb.AppendLine("Araç Dizi Sol Kapı Durumu : " + VB_DRS_OpenDoorsLeft.ToString());
+                    //    sb.AppendLine("Araç Dizi Sağ Kapı Durumu : " + VB_DRS_OpenDoorsRight.ToString());
+                    //    sb.AppendLine("____________________________________________________");
+
+
+                    //    sb.AppendLine("____________________________________________________");
+                    //    sb.AppendLine("A1 Araç Kapı Durumu : " + A1VehicleDoorStatus.ToString());
+                    //    sb.AppendLine("A2 Araç Kapı Durumu : " + A2VehicleDoorStatus.ToString());
+                    //    sb.AppendLine("C1 Araç Kapı Durumu : " + C1VehicleDoorStatus.ToString());
+                    //    sb.AppendLine("B1 Araç Kapı Durumu : " + B1VehicleDoorStatus.ToString());
+                    //    sb.AppendLine("____________________________________________________");
+
+                    //    sb.AppendLine("****************************************************");
+
+
+                    //    DisplayManager.RichTextBoxInvoke(m_richTextBox, sb.ToString());
+
+                    //    Logging.WriteCommunicationLog(DateTime.Now, sb);
+                    //}
+                    #endregion

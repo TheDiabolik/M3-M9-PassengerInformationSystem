@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<XMLSerialization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MPUTimeout>0</MPUTimeout>
+  <CommunicationType>MPU_RED</CommunicationType>
+  <WorkType>Redundant</WorkType>
+  <WriteLog>false</WriteLog>
+  <ShowRedundancyServiceCommunication>true</ShowRedundancyServiceCommunication>
+  <ShowVehicleStatus>true</ShowVehicleStatus>
+  <ConnectMPU>true</ConnectMPU>
+</XMLSerialization>
