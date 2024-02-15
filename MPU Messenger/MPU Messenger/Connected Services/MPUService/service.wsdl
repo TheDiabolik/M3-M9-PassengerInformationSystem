@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="M3YBSCommunication" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IM3YBSCommunication_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/M3YBSCommunication" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IM3YBSCommunication_Subscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subscribe" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_Subscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_Unsubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Unsubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_Unsubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_ResetDistanceCounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetDistanceCounter" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_ResetDistanceCounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetDistanceCounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_IncreaseDistanceCounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:IncreaseDistanceCounter" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_IncreaseDistanceCounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncreaseDistanceCounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_HeartBeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:HeartBeat" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_HeartBeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HeartBeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_HeartBeatWithConnectionCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:HeartBeatWithConnectionCheck" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_HeartBeatWithConnectionCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HeartBeatWithConnectionCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_MPUStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:MPUStatus" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_MPUStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MPUStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_MPUConnectionStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:MPUConnectionStatus" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_MPUConnectionStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MPUConnectionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_MPUBehaviorStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:MPUBehaviorStatus" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_MPUBehaviorStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MPUBehaviorStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_MPURedundancyStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:MPURedundancyStatus" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_MPURedundancyStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MPURedundancyStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_AddOrFindInRedundancyMPU_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrFindInRedundancyMPU" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_AddOrFindInRedundancyMPU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrFindInRedundancyMPUResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_SetMasterVolumeMute_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMasterVolumeMute" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_SetMasterVolume_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMasterVolume" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_GetMasterVolume_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterVolume" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_GetMasterVolume_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterVolumeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_GetMasterVolumeMute_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterVolumeMute" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_GetMasterVolumeMute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterVolumeMuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_AnnouncementStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnnouncementStatus" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_ConvertStationNameEnumToString_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertStationNameEnumToString" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_ConvertStationNameEnumToString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertStationNameEnumToStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_ConvertStationNameStringToEnum_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertStationNameStringToEnum" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_ConvertStationNameStringToEnum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertStationNameStringToEnumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_MPUConnectionStatusChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:MPUConnectionStatusChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_MPUBehaviorChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:MPUBehaviorChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_MPURedundancyStateChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:MPURedundancyStateChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_A1VehicleDoorStatusChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:A1VehicleDoorStatusChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_A2VehicleDoorStatusChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:A2VehicleDoorStatusChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_C1VehicleDoorStatusChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:C1VehicleDoorStatusChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_B1VehicleDoorStatusChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:B1VehicleDoorStatusChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_VB_DRS_TLLeftDrsReleasedChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:VB_DRS_TLLeftDrsReleasedChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_VB_DRS_TLRightDrsReleasedChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:VB_DRS_TLRightDrsReleasedChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_VB_DRS_OpenDoorsLeftChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:VB_DRS_OpenDoorsLeftChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_VB_DRS_OpenDoorsRightChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:VB_DRS_OpenDoorsRightChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_VI_TBS_TrainSpeedKphChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:VI_TBS_TrainSpeedKphChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_EVR_ICountDistChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EVR_ICountDistChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_VolumeStatusChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:VolumeStatusChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_VolumeMuteStatusChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:VolumeMuteStatusChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_NotifyMasterMPUForResetEVRDistanceStatus_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyMasterMPUForResetEVRDistanceStatus" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_EVR_CResetDistChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EVR_CResetDistChanged" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_DD_CMileageKm_1Changed_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:DD_CMileageKm_1Changed" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_AnnouncementStatusChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:AnnouncementStatusChanged" />
+  </wsdl:message>
+  <wsdl:portType name="IM3YBSCommunication">
+    <wsdl:operation name="Subscribe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/Subscribe" message="tns:IM3YBSCommunication_Subscribe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/SubscribeResponse" message="tns:IM3YBSCommunication_Subscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/Unsubscribe" message="tns:IM3YBSCommunication_Unsubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/UnsubscribeResponse" message="tns:IM3YBSCommunication_Unsubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetDistanceCounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/ResetDistanceCounter" message="tns:IM3YBSCommunication_ResetDistanceCounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/ResetDistanceCounterResponse" message="tns:IM3YBSCommunication_ResetDistanceCounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseDistanceCounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/IncreaseDistanceCounter" message="tns:IM3YBSCommunication_IncreaseDistanceCounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/IncreaseDistanceCounterResponse" message="tns:IM3YBSCommunication_IncreaseDistanceCounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HeartBeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/HeartBeat" message="tns:IM3YBSCommunication_HeartBeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/HeartBeatResponse" message="tns:IM3YBSCommunication_HeartBeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HeartBeatWithConnectionCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionCheck" message="tns:IM3YBSCommunication_HeartBeatWithConnectionCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionCheckResponse" message="tns:IM3YBSCommunication_HeartBeatWithConnectionCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MPUStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPUStatus" message="tns:IM3YBSCommunication_MPUStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPUStatusResponse" message="tns:IM3YBSCommunication_MPUStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MPUConnectionStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPUConnectionStatus" message="tns:IM3YBSCommunication_MPUConnectionStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPUConnectionStatusResponse" message="tns:IM3YBSCommunication_MPUConnectionStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MPUBehaviorStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPUBehaviorStatus" message="tns:IM3YBSCommunication_MPUBehaviorStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPUBehaviorStatusResponse" message="tns:IM3YBSCommunication_MPUBehaviorStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MPURedundancyStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPURedundancyStatus" message="tns:IM3YBSCommunication_MPURedundancyStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPURedundancyStatusResponse" message="tns:IM3YBSCommunication_MPURedundancyStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrFindInRedundancyMPU">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/AddOrFindInRedundancyMPU" message="tns:IM3YBSCommunication_AddOrFindInRedundancyMPU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/AddOrFindInRedundancyMPUResponse" message="tns:IM3YBSCommunication_AddOrFindInRedundancyMPU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMasterVolumeMute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/SetMasterVolumeMute" message="tns:IM3YBSCommunication_SetMasterVolumeMute_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMasterVolume">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/SetMasterVolume" message="tns:IM3YBSCommunication_SetMasterVolume_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterVolume">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/GetMasterVolume" message="tns:IM3YBSCommunication_GetMasterVolume_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/GetMasterVolumeResponse" message="tns:IM3YBSCommunication_GetMasterVolume_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterVolumeMute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/GetMasterVolumeMute" message="tns:IM3YBSCommunication_GetMasterVolumeMute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/GetMasterVolumeMuteResponse" message="tns:IM3YBSCommunication_GetMasterVolumeMute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnnouncementStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/AnnouncementStatus" message="tns:IM3YBSCommunication_AnnouncementStatus_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertStationNameEnumToString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/ConvertStationNameEnumToString" message="tns:IM3YBSCommunication_ConvertStationNameEnumToString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/ConvertStationNameEnumToStringResponse" message="tns:IM3YBSCommunication_ConvertStationNameEnumToString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertStationNameStringToEnum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/ConvertStationNameStringToEnum" message="tns:IM3YBSCommunication_ConvertStationNameStringToEnum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/ConvertStationNameStringToEnumResponse" message="tns:IM3YBSCommunication_ConvertStationNameStringToEnum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MPUConnectionStatusChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPUConnectionStatusChanged" message="tns:IM3YBSCommunication_MPUConnectionStatusChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MPUBehaviorChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPUBehaviorChanged" message="tns:IM3YBSCommunication_MPUBehaviorChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MPURedundancyStateChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPURedundancyStateChanged" message="tns:IM3YBSCommunication_MPURedundancyStateChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="A1VehicleDoorStatusChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/A1VehicleDoorStatusChanged" message="tns:IM3YBSCommunication_A1VehicleDoorStatusChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="A2VehicleDoorStatusChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/A2VehicleDoorStatusChanged" message="tns:IM3YBSCommunication_A2VehicleDoorStatusChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="C1VehicleDoorStatusChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/C1VehicleDoorStatusChanged" message="tns:IM3YBSCommunication_C1VehicleDoorStatusChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="B1VehicleDoorStatusChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/B1VehicleDoorStatusChanged" message="tns:IM3YBSCommunication_B1VehicleDoorStatusChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VB_DRS_TLLeftDrsReleasedChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/VB_DRS_TLLeftDrsReleasedChanged" message="tns:IM3YBSCommunication_VB_DRS_TLLeftDrsReleasedChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VB_DRS_TLRightDrsReleasedChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/VB_DRS_TLRightDrsReleasedChanged" message="tns:IM3YBSCommunication_VB_DRS_TLRightDrsReleasedChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VB_DRS_OpenDoorsLeftChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/VB_DRS_OpenDoorsLeftChanged" message="tns:IM3YBSCommunication_VB_DRS_OpenDoorsLeftChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VB_DRS_OpenDoorsRightChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/VB_DRS_OpenDoorsRightChanged" message="tns:IM3YBSCommunication_VB_DRS_OpenDoorsRightChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VI_TBS_TrainSpeedKphChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/VI_TBS_TrainSpeedKphChanged" message="tns:IM3YBSCommunication_VI_TBS_TrainSpeedKphChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EVR_ICountDistChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/EVR_ICountDistChanged" message="tns:IM3YBSCommunication_EVR_ICountDistChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VolumeStatusChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/VolumeStatusChanged" message="tns:IM3YBSCommunication_VolumeStatusChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VolumeMuteStatusChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/VolumeMuteStatusChanged" message="tns:IM3YBSCommunication_VolumeMuteStatusChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyMasterMPUForResetEVRDistanceStatus">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/NotifyMasterMPUForResetEVRDistanceStatus" message="tns:IM3YBSCommunication_NotifyMasterMPUForResetEVRDistanceStatus_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EVR_CResetDistChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/EVR_CResetDistChanged" message="tns:IM3YBSCommunication_EVR_CResetDistChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DD_CMileageKm_1Changed">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/DD_CMileageKm_1Changed" message="tns:IM3YBSCommunication_DD_CMileageKm_1Changed_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnnouncementStatusChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/AnnouncementStatusChanged" message="tns:IM3YBSCommunication_AnnouncementStatusChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IM3YBSCommunication" type="tns:IM3YBSCommunication">
+    <wsp:PolicyReference URI="#NetTcpBinding_IM3YBSCommunication_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Subscribe">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/Subscribe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/Unsubscribe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetDistanceCounter">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/ResetDistanceCounter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseDistanceCounter">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/IncreaseDistanceCounter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HeartBeat">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/HeartBeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HeartBeatWithConnectionCheck">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPUStatus">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/MPUStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPUConnectionStatus">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/MPUConnectionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPUBehaviorStatus">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/MPUBehaviorStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPURedundancyStatus">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/MPURedundancyStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrFindInRedundancyMPU">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/AddOrFindInRedundancyMPU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMasterVolumeMute">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/SetMasterVolumeMute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SetMasterVolume">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/SetMasterVolume" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterVolume">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/GetMasterVolume" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterVolumeMute">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/GetMasterVolumeMute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnnouncementStatus">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/AnnouncementStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertStationNameEnumToString">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/ConvertStationNameEnumToString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertStationNameStringToEnum">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/ConvertStationNameStringToEnum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPUConnectionStatusChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/MPUConnectionStatusChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPUBehaviorChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/MPUBehaviorChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MPURedundancyStateChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/MPURedundancyStateChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="A1VehicleDoorStatusChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/A1VehicleDoorStatusChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="A2VehicleDoorStatusChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/A2VehicleDoorStatusChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="C1VehicleDoorStatusChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/C1VehicleDoorStatusChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="B1VehicleDoorStatusChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/B1VehicleDoorStatusChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VB_DRS_TLLeftDrsReleasedChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/VB_DRS_TLLeftDrsReleasedChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VB_DRS_TLRightDrsReleasedChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/VB_DRS_TLRightDrsReleasedChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VB_DRS_OpenDoorsLeftChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/VB_DRS_OpenDoorsLeftChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VB_DRS_OpenDoorsRightChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/VB_DRS_OpenDoorsRightChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VI_TBS_TrainSpeedKphChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/VI_TBS_TrainSpeedKphChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVR_ICountDistChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/EVR_ICountDistChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VolumeStatusChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/VolumeStatusChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VolumeMuteStatusChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/VolumeMuteStatusChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyMasterMPUForResetEVRDistanceStatus">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/NotifyMasterMPUForResetEVRDistanceStatus" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVR_CResetDistChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/EVR_CResetDistChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DD_CMileageKm_1Changed">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/DD_CMileageKm_1Changed" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnnouncementStatusChanged">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/AnnouncementStatusChanged" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="M3YBSCommunication">
+    <wsdl:port name="NetTcpBinding_IM3YBSCommunication" binding="tns:NetTcpBinding_IM3YBSCommunication">
+      <soap12:address location="net.tcp://localhost:8733/M3YBSCommunication/M3YBSCommunication" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8733/M3YBSCommunication/M3YBSCommunication</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
