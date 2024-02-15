@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/M3YBSCommunication" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/M3YBSCommunication" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="Enums.Communication">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MPU" />
+      <xs:enumeration value="MPU_RED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.Communication" nillable="true" type="tns:Enums.Communication" />
+  <xs:simpleType name="Enums.Connection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NOT_CONNECTED" />
+      <xs:enumeration value="CONNECTED" />
+      <xs:enumeration value="CONNECTION_LOST" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.Connection" nillable="true" type="tns:Enums.Connection" />
+  <xs:complexType name="MPU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="A1VehicleDoorStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="A2VehicleDoorStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="B1VehicleDoorStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="C1VehicleDoorStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DD_CMileageKm_1" type="xs:int" />
+      <xs:element minOccurs="0" name="EVR_CResetDist" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EVR_ICountDist" type="xs:int" />
+      <xs:element minOccurs="0" name="MPUType" type="tns:Enums.MPUType" />
+      <xs:element minOccurs="0" name="VB_DRS_OpenDoorsLeft" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VB_DRS_OpenDoorsRight" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VB_DRS_TLLeftDrsReleased" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VB_DRS_TLRightDrsReleased" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VI_TBS_TrainSpeedKph" type="xs:int" />
+      <xs:element minOccurs="0" name="communication" type="tns:Enums.Communication" />
+      <xs:element minOccurs="0" name="connection" type="tns:Enums.Connection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MPU" nillable="true" type="tns:MPU" />
+  <xs:simpleType name="Enums.MPUType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="Master" />
+      <xs:enumeration value="Slave" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.MPUType" nillable="true" type="tns:Enums.MPUType" />
+  <xs:complexType name="AnnouncementDTO">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="announcementType" type="tns:Enums.AnnouncementType" />
+      <xs:element minOccurs="0" name="metroLines" type="tns:Enums.MetroLines" />
+      <xs:element minOccurs="0" name="privateAnnouncementFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stationName" type="tns:Enums.StationName" />
+      <xs:element minOccurs="0" name="status" type="tns:Enums.Announcement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnnouncementDTO" nillable="true" type="tns:AnnouncementDTO" />
+  <xs:simpleType name="Enums.AnnouncementType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Station" />
+      <xs:enumeration value="Approach" />
+      <xs:enumeration value="Start" />
+      <xs:enumeration value="Target" />
+      <xs:enumeration value="Interchange" />
+      <xs:enumeration value="Special" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.AnnouncementType" nillable="true" type="tns:Enums.AnnouncementType" />
+  <xs:simpleType name="Enums.MetroLines">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="M3" />
+      <xs:enumeration value="M9" />
+      <xs:enumeration value="Common" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.MetroLines" nillable="true" type="tns:Enums.MetroLines" />
+  <xs:simpleType name="Enums.StationName">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="KayaşehirMerkez" />
+      <xs:enumeration value="TopluKonutlar" />
+      <xs:enumeration value="ŞehirHastanesi" />
+      <xs:enumeration value="Onurkent" />
+      <xs:enumeration value="BaşakşehirMetrokent" />
+      <xs:enumeration value="BaşakKonutları" />
+      <xs:enumeration value="Siteler" />
+      <xs:enumeration value="TurgutÖzal" />
+      <xs:enumeration value="İkitelliSanayi" />
+      <xs:enumeration value="İSTOÇ" />
+      <xs:enumeration value="Mahmutbey" />
+      <xs:enumeration value="Yenimahalle" />
+      <xs:enumeration value="Kirazlı" />
+      <xs:enumeration value="MollaGürani" />
+      <xs:enumeration value="Yıldıztepe" />
+      <xs:enumeration value="İlkyuva" />
+      <xs:enumeration value="Haznedar" />
+      <xs:enumeration value="Bakırköyİncirli" />
+      <xs:enumeration value="ÖzgürlükMeydanı" />
+      <xs:enumeration value="BakırköyİDO" />
+      <xs:enumeration value="Ataköy" />
+      <xs:enumeration value="Yenibosna" />
+      <xs:enumeration value="ÇobançeşmeKuyumcukent" />
+      <xs:enumeration value="İhlasYuva" />
+      <xs:enumeration value="DoğuSanayi" />
+      <xs:enumeration value="MimarSinan" />
+      <xs:enumeration value="OnBeşTemmuz" />
+      <xs:enumeration value="HalkalıCaddesi" />
+      <xs:enumeration value="AtatürkMahallesi" />
+      <xs:enumeration value="Bahariye" />
+      <xs:enumeration value="MASKO" />
+      <xs:enumeration value="ZiyaGökalpMahallesi" />
+      <xs:enumeration value="Olimpiyat" />
+      <xs:enumeration value="NA" />
+      <xs:enumeration value="DepoSahası" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.StationName" nillable="true" type="tns:Enums.StationName" />
+  <xs:simpleType name="Enums.Announcement">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Play">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Stop">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.Announcement" nillable="true" type="tns:Enums.Announcement" />
+</xs:schema>

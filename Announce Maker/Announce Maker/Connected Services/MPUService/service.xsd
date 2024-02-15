@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/M3YBSCommunication" />
+  <xs:element name="Subscribe">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubscribeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Unsubscribe">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnsubscribeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UnsubscribeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetDistanceCounter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="resetCountDist" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetDistanceCounterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncreaseDistanceCounter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="increaseCountDist" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IncreaseDistanceCounterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeartBeat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="heartBeat" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeartBeatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HeartBeatResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeartBeatWithConnectionCheck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="heartBeat" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q1:Enums.Communication" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="connectionStatus" type="q2:Enums.Connection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeartBeatWithConnectionCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HeartBeatWithConnectionCheckResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MPUStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="mpu" nillable="true" type="q3:MPU" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MPUStatusResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MPUConnectionStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q4:Enums.Communication" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="connectionStatus" type="q5:Enums.Connection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MPUConnectionStatusResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MPUBehaviorStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q6:Enums.Communication" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="MPUType" type="q7:Enums.MPUType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MPUBehaviorStatusResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MPURedundancyStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="redundancyStatus" type="xs:int" />
+        <xs:element minOccurs="0" name="MPUName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MPURedundancyStatusResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrFindInRedundancyMPU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="mpu" nillable="true" type="q8:MPU" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrFindInRedundancyMPUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="AddOrFindInRedundancyMPUResult" nillable="true" type="q9:MPU" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMasterVolumeMute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mute" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMasterVolume">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="newLevel" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterVolume">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterVolumeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMasterVolumeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterVolumeMute">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterVolumeMuteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMasterVolumeMuteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnouncementStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="announcementDTO" type="q10:AnnouncementDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertStationNameEnumToString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="stationName" type="q11:Enums.StationName" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertStationNameEnumToStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConvertStationNameEnumToStringResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertStationNameStringToEnum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stationName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertStationNameStringToEnumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="ConvertStationNameStringToEnumResult" type="q12:Enums.StationName" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MPUConnectionStatusChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q13:Enums.Communication" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="connection" type="q14:Enums.Connection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MPUBehaviorChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q15:Enums.Communication" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="MPUType" type="q16:Enums.MPUType" />
+        <xs:element minOccurs="0" name="masterMPUName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MPURedundancyStateChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="redundancyState" type="xs:int" />
+        <xs:element minOccurs="0" name="MPUName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="A1VehicleDoorStatusChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="A1VehicleDoorStatus" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="A2VehicleDoorStatusChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="A2VehicleDoorStatus" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="C1VehicleDoorStatusChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="C1VehicleDoorStatus" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="B1VehicleDoorStatusChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="B1VehicleDoorStatus" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VB_DRS_TLLeftDrsReleasedChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VB_DRS_TLLeftDrsReleased" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VB_DRS_TLRightDrsReleasedChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VB_DRS_TLRightDrsReleased" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VB_DRS_OpenDoorsLeftChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VB_DRS_OpenDoorsLeft" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VB_DRS_OpenDoorsRightChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VB_DRS_OpenDoorsRight" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VI_TBS_TrainSpeedKphChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VI_TBS_TrainSpeedKph" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EVR_ICountDistChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EVR_ICountDist" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VolumeStatusChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="volume" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VolumeMuteStatusChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mute" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyMasterMPUForResetEVRDistanceStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="masterMPU" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EVR_ICountDist" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EVR_CResetDistChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EVR_CResetDist" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DD_CMileageKm_1Changed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DD_CMileageKm_1" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnouncementStatusChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="announcementDTO" type="q17:AnnouncementDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

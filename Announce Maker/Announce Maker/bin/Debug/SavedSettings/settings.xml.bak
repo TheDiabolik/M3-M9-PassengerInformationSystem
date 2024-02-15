@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<XMLSerialization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <M3StationAnnouncementFilePath>D:\YBS\M3\Announcement\Station</M3StationAnnouncementFilePath>
+  <M3PrivateAnnouncementFilePath>D:\YBS\M3\Announcement\Private</M3PrivateAnnouncementFilePath>
+  <M9StationAnnouncementFilePath>D:\YBS\M9\Announcement\Station</M9StationAnnouncementFilePath>
+  <M9PrivateAnnouncementFilePath>D:\YBS\M9\Announcement\Private</M9PrivateAnnouncementFilePath>
+  <SaveLog>false</SaveLog>
+  <ConnectServiceOpenning>true</ConnectServiceOpenning>
+  <PlaySync>false</PlaySync>
+  <PlayAsync>true</PlayAsync>
+  <ShowServiceInfoUI>true</ShowServiceInfoUI>
+  <PortName>COM7</PortName>
+  <BaudRate>9600</BaudRate>
+  <DataBits>8</DataBits>
+  <Parity>None</Parity>
+  <StopBits>One</StopBits>
+</XMLSerialization>

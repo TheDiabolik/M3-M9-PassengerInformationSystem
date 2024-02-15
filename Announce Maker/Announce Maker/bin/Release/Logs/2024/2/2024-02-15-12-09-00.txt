@@ -1,0 +1,225 @@
+-------------------------------------
+Hata Zamanı : 
+02.15.2024 12:15:22-096254
+
+Hata Mesajı :
+net.tcp://localhost:8733/M3YBSCommunication/M3YBSCommunication bağlantısı yapılamıyor. Bağlanma denemesi 00:00:04.1248872 uzunluğunda bir süre boyunca yapıldı. TCP hata kodu 10061: Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı [::1]:8733. 
+
+Hata Oluşan Kod Parçacığı :
+   konum: System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannelProxy.TaskCreator.<>c__DisplayClass7_0`1.<CreateGenericTask>b__0(IAsyncResult asyncResult)
+   konum: System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- Özel durumun oluşturulduğu önceki konumdan başlayan yığın izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: PlayAnouncements.MainForm.<StartMPUServiceClient>d__18.MoveNext() C:\Users\ahmet.tacgin\source\repos\PlayAnouncements\PlayAnouncements\MainForm.cs içinde: satır 252
+
+Hata Oluşan Metot :
+TAsyncResult End[TAsyncResult](System.IAsyncResult)
+
+Yorum :
+MPU Yedeklilik Servisine Bağlantı Hatası!
+
+-------------------------------------
+-------------------------------------
+Hata Zamanı : 
+02.15.2024 12:15:28-136186
+
+Hata Mesajı :
+net.tcp://localhost:8733/M3YBSCommunication/M3YBSCommunication bağlantısı yapılamıyor. Bağlanma denemesi 00:00:04.0951960 uzunluğunda bir süre boyunca yapıldı. TCP hata kodu 10061: Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı [::1]:8733. 
+
+Hata Oluşan Kod Parçacığı :
+   konum: System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannelProxy.TaskCreator.<>c__DisplayClass7_0`1.<CreateGenericTask>b__0(IAsyncResult asyncResult)
+   konum: System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- Özel durumun oluşturulduğu önceki konumdan başlayan yığın izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: PlayAnouncements.MainForm.<StartMPUServiceClient>d__18.MoveNext() C:\Users\ahmet.tacgin\source\repos\PlayAnouncements\PlayAnouncements\MainForm.cs içinde: satır 252
+
+Hata Oluşan Metot :
+TAsyncResult End[TAsyncResult](System.IAsyncResult)
+
+Yorum :
+MPU Yedeklilik Servisine Bağlantı Hatası!
+
+-------------------------------------
+-------------------------------------
+Hata Zamanı : 
+02.15.2024 12:15:34-156228
+
+Hata Mesajı :
+net.tcp://localhost:8733/M3YBSCommunication/M3YBSCommunication bağlantısı yapılamıyor. Bağlanma denemesi 00:00:04.0952272 uzunluğunda bir süre boyunca yapıldı. TCP hata kodu 10061: Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı [::1]:8733. 
+
+Hata Oluşan Kod Parçacığı :
+   konum: System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannelProxy.TaskCreator.<>c__DisplayClass7_0`1.<CreateGenericTask>b__0(IAsyncResult asyncResult)
+   konum: System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- Özel durumun oluşturulduğu önceki konumdan başlayan yığın izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: PlayAnouncements.MainForm.<StartMPUServiceClient>d__18.MoveNext() C:\Users\ahmet.tacgin\source\repos\PlayAnouncements\PlayAnouncements\MainForm.cs içinde: satır 252
+
+Hata Oluşan Metot :
+TAsyncResult End[TAsyncResult](System.IAsyncResult)
+
+Yorum :
+MPU Yedeklilik Servisine Bağlantı Hatası!
+
+-------------------------------------
+-------------------------------------
+Hata Zamanı : 
+02.15.2024 12:15:40-211703
+
+Hata Mesajı :
+net.tcp://localhost:8733/M3YBSCommunication/M3YBSCommunication bağlantısı yapılamıyor. Bağlanma denemesi 00:00:04.0996235 uzunluğunda bir süre boyunca yapıldı. TCP hata kodu 10061: Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı [::1]:8733. 
+
+Hata Oluşan Kod Parçacığı :
+   konum: System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannelProxy.TaskCreator.<>c__DisplayClass7_0`1.<CreateGenericTask>b__0(IAsyncResult asyncResult)
+   konum: System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- Özel durumun oluşturulduğu önceki konumdan başlayan yığın izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: PlayAnouncements.MainForm.<StartMPUServiceClient>d__18.MoveNext() C:\Users\ahmet.tacgin\source\repos\PlayAnouncements\PlayAnouncements\MainForm.cs içinde: satır 252
+
+Hata Oluşan Metot :
+TAsyncResult End[TAsyncResult](System.IAsyncResult)
+
+Yorum :
+MPU Yedeklilik Servisine Bağlantı Hatası!
+
+-------------------------------------
+-------------------------------------
+Hata Zamanı : 
+02.15.2024 12:15:46-246586
+
+Hata Mesajı :
+net.tcp://localhost:8733/M3YBSCommunication/M3YBSCommunication bağlantısı yapılamıyor. Bağlanma denemesi 00:00:04.0999138 uzunluğunda bir süre boyunca yapıldı. TCP hata kodu 10061: Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı [::1]:8733. 
+
+Hata Oluşan Kod Parçacığı :
+   konum: System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannelProxy.TaskCreator.<>c__DisplayClass7_0`1.<CreateGenericTask>b__0(IAsyncResult asyncResult)
+   konum: System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- Özel durumun oluşturulduğu önceki konumdan başlayan yığın izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: PlayAnouncements.MainForm.<StartMPUServiceClient>d__18.MoveNext() C:\Users\ahmet.tacgin\source\repos\PlayAnouncements\PlayAnouncements\MainForm.cs içinde: satır 252
+
+Hata Oluşan Metot :
+TAsyncResult End[TAsyncResult](System.IAsyncResult)
+
+Yorum :
+MPU Yedeklilik Servisine Bağlantı Hatası!
+
+-------------------------------------
+-------------------------------------
+Hata Zamanı : 
+02.15.2024 12:15:52-226375
+
+Hata Mesajı :
+net.tcp://localhost:8733/M3YBSCommunication/M3YBSCommunication bağlantısı yapılamıyor. Bağlanma denemesi 00:00:04.0500653 uzunluğunda bir süre boyunca yapıldı. TCP hata kodu 10061: Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı [::1]:8733. 
+
+Hata Oluşan Kod Parçacığı :
+   konum: System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannelProxy.TaskCreator.<>c__DisplayClass7_0`1.<CreateGenericTask>b__0(IAsyncResult asyncResult)
+   konum: System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- Özel durumun oluşturulduğu önceki konumdan başlayan yığın izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: PlayAnouncements.MainForm.<StartMPUServiceClient>d__18.MoveNext() C:\Users\ahmet.tacgin\source\repos\PlayAnouncements\PlayAnouncements\MainForm.cs içinde: satır 252
+
+Hata Oluşan Metot :
+TAsyncResult End[TAsyncResult](System.IAsyncResult)
+
+Yorum :
+MPU Yedeklilik Servisine Bağlantı Hatası!
+
+-------------------------------------
+-------------------------------------
+Hata Zamanı : 
+02.15.2024 12:15:58-286771
+
+Hata Mesajı :
+net.tcp://localhost:8733/M3YBSCommunication/M3YBSCommunication bağlantısı yapılamıyor. Bağlanma denemesi 00:00:04.0801413 uzunluğunda bir süre boyunca yapıldı. TCP hata kodu 10061: Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı [::1]:8733. 
+
+Hata Oluşan Kod Parçacığı :
+   konum: System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannelProxy.TaskCreator.<>c__DisplayClass7_0`1.<CreateGenericTask>b__0(IAsyncResult asyncResult)
+   konum: System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- Özel durumun oluşturulduğu önceki konumdan başlayan yığın izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: PlayAnouncements.MainForm.<StartMPUServiceClient>d__18.MoveNext() C:\Users\ahmet.tacgin\source\repos\PlayAnouncements\PlayAnouncements\MainForm.cs içinde: satır 252
+
+Hata Oluşan Metot :
+TAsyncResult End[TAsyncResult](System.IAsyncResult)
+
+Yorum :
+MPU Yedeklilik Servisine Bağlantı Hatası!
+
+-------------------------------------
+-------------------------------------
+Hata Zamanı : 
+02.15.2024 12:16:04-346553
+
+Hata Mesajı :
+net.tcp://localhost:8733/M3YBSCommunication/M3YBSCommunication bağlantısı yapılamıyor. Bağlanma denemesi 00:00:04.1040251 uzunluğunda bir süre boyunca yapıldı. TCP hata kodu 10061: Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı [::1]:8733. 
+
+Hata Oluşan Kod Parçacığı :
+   konum: System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannelProxy.TaskCreator.<>c__DisplayClass7_0`1.<CreateGenericTask>b__0(IAsyncResult asyncResult)
+   konum: System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- Özel durumun oluşturulduğu önceki konumdan başlayan yığın izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: PlayAnouncements.MainForm.<StartMPUServiceClient>d__18.MoveNext() C:\Users\ahmet.tacgin\source\repos\PlayAnouncements\PlayAnouncements\MainForm.cs içinde: satır 252
+
+Hata Oluşan Metot :
+TAsyncResult End[TAsyncResult](System.IAsyncResult)
+
+Yorum :
+MPU Yedeklilik Servisine Bağlantı Hatası!
+
+-------------------------------------
+-------------------------------------
+Hata Zamanı : 
+02.15.2024 12:16:10-416509
+
+Hata Mesajı :
+net.tcp://localhost:8733/M3YBSCommunication/M3YBSCommunication bağlantısı yapılamıyor. Bağlanma denemesi 00:00:04.1253852 uzunluğunda bir süre boyunca yapıldı. TCP hata kodu 10061: Hedef makine etkin olarak reddettiğinden bağlantı kurulamadı [::1]:8733. 
+
+Hata Oluşan Kod Parçacığı :
+   konum: System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+   konum: System.ServiceModel.Channels.ServiceChannelProxy.TaskCreator.<>c__DisplayClass7_0`1.<CreateGenericTask>b__0(IAsyncResult asyncResult)
+   konum: System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- Özel durumun oluşturulduğu önceki konumdan başlayan yığın izlemesinin sonu ---
+   konum: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   konum: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   konum: PlayAnouncements.MainForm.<StartMPUServiceClient>d__18.MoveNext() C:\Users\ahmet.tacgin\source\repos\PlayAnouncements\PlayAnouncements\MainForm.cs içinde: satır 252
+
+Hata Oluşan Metot :
+TAsyncResult End[TAsyncResult](System.IAsyncResult)
+
+Yorum :
+MPU Yedeklilik Servisine Bağlantı Hatası!
+
+-------------------------------------
