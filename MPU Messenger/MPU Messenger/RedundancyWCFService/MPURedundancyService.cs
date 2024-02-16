@@ -113,6 +113,9 @@ namespace MPUMessenger
 
                 DisplayManager.RichTextBoxInvoke(MainForm.m_mf.m_richTextBox, "MPU Master : " + " " + Enums.Communication.MPU.ToString() + " Distance Counter İçin Gelen Talep : " + EVR_ICountDist.ToString());
                 
+                if(MainForm.m_mf.m_toolStripStatusLabelMPUBehavior.Text != "Master")
+                    DisplayManager.RichTextBoxInvoke(MainForm.m_mf.m_richTextBox, "MPU Master Modda Değilken Araç Distance Counter Reset Talebini Uygulamaz !!!");
+
                 ThreadPool.QueueUserWorkItem(new WaitCallback(MPUOperations.ResetDistanceCounter), EVR_ICountDist);
 
             }
