@@ -235,6 +235,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Metro_İstanbul_icon.svg.png" />
+    <None Include="Resources\185096_settings_icon.png" />
+    <None Include="Resources\8675347_fluent_serial_port_regular_icon.png" />
+    <None Include="Resources\Papirus-Team-Papirus-Apps-Gtkterm.512.png" />
     <Content Include="speaker.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

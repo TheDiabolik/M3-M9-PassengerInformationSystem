@@ -481,5 +481,14 @@ namespace AnnounceMaker
             generalSettingsModal.ShowDialog();
         }
 
+        private void m_settingsPopup_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void seriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

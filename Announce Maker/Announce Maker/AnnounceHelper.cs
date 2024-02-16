@@ -101,7 +101,7 @@ namespace AnnounceMaker
                     MainForm.m_mf.m_announceFilePath = MainForm.m_mf.m_settings.M9StationAnnouncementFilePath + "\\" + stationNamePath + "\\" + MainForm.m_mf.m_announceFilePath;
             }
 
-            DisplayManager.RichTextBoxInvokeWithLine(MainForm.m_mf.m_richTextBox, "Anfiye Seri Porttan Kanal Açma Talebi Gönderiliyor.");
+            DisplayManager.RichTextBoxInvokeWithLine(MainForm.m_mf.m_richTextBox, "Amfiye Seri Porttan Kanal Açma Talebi Gönderiliyor.");
 
             if(MainForm.m_mf.m_serialPort.IsOpen)
                 MainForm.m_mf.m_serialPort.Write("1");
