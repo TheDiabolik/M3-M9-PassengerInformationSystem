@@ -555,6 +555,9 @@ namespace MPUMessenger
                 SOAPHelper.CreateSOAPMessage(generatedXML, Enums.ReadingSoapMessageType.XMLString);
             }
         }
+
+      
+
         private void m_buttonAnnouncement_Click(object sender, EventArgs e)
         {
             Button myButton = (Button)sender;
