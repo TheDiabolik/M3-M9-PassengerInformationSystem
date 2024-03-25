@@ -105,7 +105,7 @@ namespace M3YBSCommunication
                     if (deleteNotifyCount > 3)
                     {
                         deleteNotifyCount = 0;
-                        continue;
+                        break;
                     }
                      
 
