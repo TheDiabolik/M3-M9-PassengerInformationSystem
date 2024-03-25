@@ -65,7 +65,7 @@ namespace M3YBSCommunication
 
 
             try
-            { 
+            {
                 counter++;
 
                 foreach (ICallbackMPUStatus callBack in m_notifySubscribers)
@@ -84,6 +84,8 @@ namespace M3YBSCommunication
                     }
                 }
 
+                int deleteNotifyCount = 0;
+
                 while (m_toBeDeleted.TryDequeue(out ICallbackMPUStatus deletedCallBack))
                 {
                     bool deleteNotify = m_notifySubscribers.Remove(deletedCallBack);
@@ -91,12 +93,22 @@ namespace M3YBSCommunication
                     if (!deleteNotify)
                     {
                         m_toBeDeleted.Enqueue(deletedCallBack);
+
+                        deleteNotifyCount++;    
                     }
                     else
                     {
                         Console.WriteLine("Kapalı Olan Dinleyici Sayısı : " + m_notifySubscribers.Count().ToString());
                         Debug.WriteLine("Kapalı Olan Dinleyici Sayısı : " + m_notifySubscribers.Count().ToString());
                     }
+
+                    if (deleteNotifyCount > 3)
+                    {
+                        deleteNotifyCount = 0;
+                        continue;
+                    }
+                     
+
                 }
 
                 //MPU bağlantı düşme kontrolü
@@ -774,9 +786,9 @@ namespace M3YBSCommunication
                         stationFilePathName = "Haznedar";
                         break;
                     }
-                case Enums.StationName.Bakırköyİncirli:
+                case Enums.StationName.İncirli:
                     {
-                        stationFilePathName = "Bakırköy - İncirli";
+                        stationFilePathName = "İncirli";
                         break;
                     }
                 case Enums.StationName.ÖzgürlükMeydanı:
@@ -784,9 +796,9 @@ namespace M3YBSCommunication
                         stationFilePathName = "Özgürlük Meydanı";
                         break;
                     }
-                case Enums.StationName.BakırköyİDO:
+                case Enums.StationName.BakırköySahil:
                     {
-                        stationFilePathName = "Bakırköy İDO";
+                        stationFilePathName = "Bakırköy Sahil";
                         break;
                     }
                 case Enums.StationName.Ataköy:
@@ -799,14 +811,14 @@ namespace M3YBSCommunication
                         stationFilePathName = "Yenibosna";
                         break;
                     }
-                case Enums.StationName.ÇobançeşmeKuyumcukent:
+                case Enums.StationName.Çobançeşme:
                     {
-                        stationFilePathName = "Çobançeşme - Kuyumcukent";
+                        stationFilePathName = "Çobançeşme";
                         break;
                     }
-                case Enums.StationName.İhlasYuva:
+                case Enums.StationName.YirmiDokuzEkimCumhuriyet:
                     {
-                        stationFilePathName = "İhlas Yuva";
+                        stationFilePathName = "29 Ekim Cumhuriyet";
                         break;
                     }
                 case Enums.StationName.DoğuSanayi:
@@ -957,9 +969,9 @@ namespace M3YBSCommunication
                         stationNameEnum = Enums.StationName.Haznedar;
                         break;
                     }
-                case "Bakırköy - İncirli":
+                case "İncirli":
                     {
-                        stationNameEnum = Enums.StationName.Bakırköyİncirli;
+                        stationNameEnum = Enums.StationName.İncirli;
                         break;
                     }
                 case "Özgürlük Meydanı":
@@ -967,9 +979,9 @@ namespace M3YBSCommunication
                         stationNameEnum = Enums.StationName.ÖzgürlükMeydanı;
                         break;
                     }
-                case "Bakırköy İDO":
+                case "Bakırköy Sahil":
                     {
-                        stationNameEnum = Enums.StationName.BakırköyİDO;
+                        stationNameEnum = Enums.StationName.BakırköySahil;
                         break;
                     }
                 case "Ataköy":
@@ -982,14 +994,14 @@ namespace M3YBSCommunication
                         stationNameEnum = Enums.StationName.Yenibosna;
                         break;
                     }
-                case "Çobançeşme - Kuyumcukent":
+                case "Çobançeşme":
                     {
-                        stationNameEnum = Enums.StationName.ÇobançeşmeKuyumcukent;
+                        stationNameEnum = Enums.StationName.Çobançeşme;
                         break;
                     }
-                case "İhlas Yuva":
+                case "29 Ekim Cumhuriyet":
                     {
-                        stationNameEnum = Enums.StationName.İhlasYuva;
+                        stationNameEnum = Enums.StationName.YirmiDokuzEkimCumhuriyet;
                         break;
                     }
                 case "Doğu Sanayi":
