@@ -38,7 +38,7 @@
   <ItemGroup>
     <Reference Include="IPAddressControlLib, Version=1.0.3039.20052, Culture=neutral, PublicKeyToken=9695e912950a5d9b">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\IPAddressControlLib.dll</HintPath>
+      <HintPath>bin\Release\IPAddressControlLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

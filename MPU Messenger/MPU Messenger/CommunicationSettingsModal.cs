@@ -23,12 +23,7 @@ namespace MPUMessenger
             m_settings = m_settings.DeSerialize(m_settings);
 
             //ayarları atama
-            m_textBoxMPUMessageTimeout.Text = m_settings.MPUTimeout.ToString();
-
-            if (m_settings.CommunicationType == Enums.Communication.MPU)
-                m_radioButtonMPU.Checked = true;
-            else
-                m_radioButtonClient.Checked = true;
+            m_textBoxMPUMessageTimeout.Text = m_settings.MPUTimeout.ToString(); 
 
             if(m_settings.WorkType == Enums.WorkType.Single)
                 m_radioButtonSingle.Checked = true;
@@ -55,6 +50,16 @@ namespace MPUMessenger
             else
                 m_checkBoxConnectMPU.Checked = false;
 
+            if (m_settings.CommunicationType == Enums.Communication.MPU)
+            {
+                m_radioButtonMPU.Checked = true;
+                m_ipAddressControlMPU.Text = m_settings.MPUIPAddress;
+            }
+            else
+            {
+                m_radioButtonMPU_RED.Checked = true;
+                m_ipAddressControlMPU_RED.Text = m_settings.MPU_REDIPAddress;
+            }
         }
         public CommunicationSettingsModal(MainForm mf) : this()
         {
@@ -75,14 +80,24 @@ namespace MPUMessenger
             m_settings.MPUTimeout = Convert.ToInt32(m_textBoxMPUMessageTimeout.Text);
 
             if (m_radioButtonMPU.Checked)
+            {
                 m_settings.CommunicationType = Enums.Communication.MPU;
+                m_settings.MPUIPAddress = m_ipAddressControlMPU.Text;
+            }
             else
+            {
                 m_settings.CommunicationType = Enums.Communication.MPU_RED;
+                m_settings.MPU_REDIPAddress = m_ipAddressControlMPU_RED.Text;
+            }
+                
 
             if (m_radioButtonSingle.Checked)
                 m_settings.WorkType = Enums.WorkType.Single;
             else
                 m_settings.WorkType = Enums.WorkType.Redundant;
+
+            
+
 
             //mpu bağlantısını durdumak için
             if(m_settings.CommunicationType.ToString() != MainForm.m_mf.m_toolStripStatusLabelMPUName.Text)
@@ -151,6 +166,25 @@ namespace MPUMessenger
 
             if ((Button)sender == m_buttonApply)
                 this.Close();
+        }
+
+        private void m_radioButtons_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioButton = (RadioButton)sender;
+
+            if (radioButton == m_radioButtonMPU)
+            {
+                m_ipAddressControlMPU.Enabled = true;
+                m_ipAddressControlMPU_RED.Enabled = false; 
+            }
+            else if (radioButton == m_radioButtonMPU_RED)
+            {
+                m_ipAddressControlMPU.Enabled = false;
+                m_ipAddressControlMPU_RED.Enabled = true;
+            }
+
+            m_ipAddressControlMPU.Text = m_settings.MPUIPAddress;
+            m_ipAddressControlMPU_RED.Text = m_settings.MPU_REDIPAddress;
         }
     }
 }

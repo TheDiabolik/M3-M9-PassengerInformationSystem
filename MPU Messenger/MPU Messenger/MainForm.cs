@@ -112,8 +112,19 @@ namespace MPUMessenger
                             else
                                 MPUConnectionStatus = MPUService.EnumsConnection.NOT_CONNECTED;
 
+                            //değişiklik burada
+                            MPUService.EnumsMPUType enumsMPUType;
+
+                            if (m_MPUToClientProperties.RedundancyState == 1)
+                                enumsMPUType = MPUService.EnumsMPUType.Master;
+                            else if (m_MPUToClientProperties.RedundancyState == 2)
+                                enumsMPUType = MPUService.EnumsMPUType.Slave;
+                            else
+                                enumsMPUType = MPUService.EnumsMPUType.Undefined;
+
+
                             //wcf instance null değilse veri alışverişi var mı kontrolü?
-                            Task<string> heartbeatTask = m_client.HeartBeatWithConnectionCheckAsync("AREUALIVE", enumsCommunication, MPUConnectionStatus);
+                            Task<string> heartbeatTask = m_client.HeartBeatWithConnectionAndMPUStatusCheckAsync("AREUALIVE", enumsCommunication, MPUConnectionStatus, enumsMPUType);
 
                             var timeoutTask = Task.Delay(1500);
 
@@ -496,6 +507,9 @@ namespace MPUMessenger
 
                 if (!string.IsNullOrEmpty(serviceResult))
                     UIOperation.MPUCommunicationStatus(showMPUCommunicationInfo);
+
+
+               
 
             }
             catch (Exception ex)
