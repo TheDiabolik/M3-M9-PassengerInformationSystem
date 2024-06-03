@@ -16,6 +16,14 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Enums.Connection" nillable="true" type="tns:Enums.Connection" />
+  <xs:simpleType name="Enums.MPUType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="Master" />
+      <xs:enumeration value="Slave" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.MPUType" nillable="true" type="tns:Enums.MPUType" />
   <xs:complexType name="MPU">
     <xs:sequence>
       <xs:element minOccurs="0" name="A1VehicleDoorStatus" type="xs:boolean" />
@@ -36,14 +44,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MPU" nillable="true" type="tns:MPU" />
-  <xs:simpleType name="Enums.MPUType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Undefined" />
-      <xs:enumeration value="Master" />
-      <xs:enumeration value="Slave" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="Enums.MPUType" nillable="true" type="tns:Enums.MPUType" />
   <xs:complexType name="AnnouncementDTO">
     <xs:annotation>
       <xs:appinfo>
@@ -97,13 +97,13 @@
       <xs:enumeration value="Yıldıztepe" />
       <xs:enumeration value="İlkyuva" />
       <xs:enumeration value="Haznedar" />
-      <xs:enumeration value="Bakırköyİncirli" />
+      <xs:enumeration value="İncirli" />
       <xs:enumeration value="ÖzgürlükMeydanı" />
-      <xs:enumeration value="BakırköyİDO" />
+      <xs:enumeration value="BakırköySahil" />
       <xs:enumeration value="Ataköy" />
       <xs:enumeration value="Yenibosna" />
-      <xs:enumeration value="ÇobançeşmeKuyumcukent" />
-      <xs:enumeration value="İhlasYuva" />
+      <xs:enumeration value="Çobançeşme" />
+      <xs:enumeration value="YirmiDokuzEkimCumhuriyet" />
       <xs:enumeration value="DoğuSanayi" />
       <xs:enumeration value="MimarSinan" />
       <xs:enumeration value="OnBeşTemmuz" />
