@@ -23,7 +23,7 @@ namespace M3YBSCommunication
         {
             KayaşehirMerkez, TopluKonutlar, ŞehirHastanesi, Onurkent, BaşakşehirMetrokent, BaşakKonutları,
             Siteler, TurgutÖzal, İkitelliSanayi, İSTOÇ, Mahmutbey, Yenimahalle, Kirazlı, MollaGürani, Yıldıztepe, İlkyuva, Haznedar,
-            Bakırköyİncirli, ÖzgürlükMeydanı, BakırköyİDO, Ataköy, Yenibosna, ÇobançeşmeKuyumcukent, İhlasYuva, DoğuSanayi, MimarSinan, OnBeşTemmuz, 
+            İncirli, ÖzgürlükMeydanı, BakırköySahil, Ataköy, Yenibosna, Çobançeşme, YirmiDokuzEkimCumhuriyet, DoğuSanayi, MimarSinan, OnBeşTemmuz, 
             HalkalıCaddesi, AtatürkMahallesi, Bahariye, MASKO, ZiyaGökalpMahallesi, Olimpiyat, NA, DepoSahası
         }
     }

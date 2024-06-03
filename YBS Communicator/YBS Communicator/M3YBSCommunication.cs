@@ -26,6 +26,26 @@ namespace M3YBSCommunication
         private static ThreadSafeList<ICallbackMPUStatus> m_notifySubscribers = new ThreadSafeList<ICallbackMPUStatus>();
         private static ThreadSafeList<MPU> m_redundancyMPUs = new ThreadSafeList<MPU>();
 
+        private static string m_mpuStatus;
+        public string MpuStatus
+        {
+            get { return m_mpuStatus; }
+            set
+            {
+                m_mpuStatus = value;
+            }
+        }
+
+        private static string m_mpuRedStatus;
+        public string MpuRedStatus
+        {
+            get { return m_mpuRedStatus; }
+            set
+            {
+                m_mpuRedStatus = value;
+            }
+        }
+
         string m_status;
 
         private static string m_masterMPUName;
@@ -52,6 +72,7 @@ namespace M3YBSCommunication
             }
         }
 
+
         private static void OnTimerElapsed(object sender)//, System.Timers.ElapsedEventArgs e)
         {
             Console.WriteLine("Servis Çalışıyor.");
@@ -61,8 +82,13 @@ namespace M3YBSCommunication
             Debug.WriteLine("Bağlı Dinleyici Sayısı : " + m_notifySubscribers.Count().ToString());
 
             Console.WriteLine("Yedeklilik Listesindeki MPU Sayısı : " + m_redundancyMPUs.Count().ToString());
-            Debug.WriteLine("Yedeklilik Listesindeki MPU Sayısı : " + m_redundancyMPUs.Count().ToString());
+            Debug.WriteLine("Yedeklilik Listesindeki MPU Sayısı : " + m_redundancyMPUs.Count().ToString()); 
 
+            Console.WriteLine("MPU : " + m_mpuStatus);
+            Debug.WriteLine("MPU : " + m_mpuStatus);
+
+            Console.WriteLine("MPU_RED : " + m_mpuRedStatus);
+            Debug.WriteLine("MPU_RED : " + m_mpuRedStatus);
 
             try
             {
@@ -268,6 +294,58 @@ namespace M3YBSCommunication
             return response;
         }
 
+        public string HeartBeatWithConnectionAndMPUStatusCheck(string heartBeat, Enums.Communication communication, Enums.Connection connection, Enums.MPUType mpuType)
+        {
+            string response = "";
+
+            if (heartBeat == "AREUALIVE")
+                response = "IMALIVE";
+
+            Console.WriteLine("IMALIVE");
+
+            if ((communication == Enums.Communication.MPU) && (connection == Enums.Connection.CONNECTED))
+            {
+                m_stopWatchMPUConnection.Restart();
+                Console.WriteLine("MPU Bağlantı Kontrolcüsü Başladı!");
+            }
+            else if ((communication == Enums.Communication.MPU_RED) && (connection == Enums.Connection.CONNECTED))
+            {
+                m_stopWatchMPU_REDConnection.Restart();
+                Console.WriteLine("MPU_RED Bağlantı Kontrolcüsü Başladı!");
+            }
+
+
+            if (communication == Enums.Communication.MPU)
+            {
+                if(mpuType == Enums.MPUType.Master)
+                {
+                    MpuStatus = "Master";
+                    MpuRedStatus = "Slave";
+                }
+                else if(mpuType == Enums.MPUType.Slave)
+                {
+                    MpuStatus = "Slave";
+                    MpuRedStatus = "Master";
+                }
+            }
+
+            if (communication == Enums.Communication.MPU_RED)
+            {
+                if (mpuType == Enums.MPUType.Master)
+                {
+                    MpuRedStatus = "Master";
+                    MpuStatus = "Slave";
+                }
+                else if (mpuType == Enums.MPUType.Slave)
+                {
+                    MpuRedStatus = "Slave";
+                    MpuStatus = "Master";
+                }
+            }
+
+            return response;
+        }
+
         public void RedundancyMPUName(Enums.Communication communication, Enums.MPUType type)
         {
             if ((communication == Enums.Communication.MPU) && (type == Enums.MPUType.Master))
@@ -289,9 +367,21 @@ namespace M3YBSCommunication
             if (redundancyState == 1)
             {
                 if (redundancyMPUName == "MPU")
+                {
                     MasterMPUName = Enums.Communication.MPU.ToString();
+
+                    MpuStatus = "Master";
+                    MpuRedStatus = "Slave";
+
+                }
                 else
+                {
                     MasterMPUName = Enums.Communication.MPU_RED.ToString();
+
+                    MpuStatus = "Slave";
+                    MpuRedStatus = "Master";
+                }
+
             }
             else if (redundancyState == 2)
             {
@@ -420,9 +510,7 @@ namespace M3YBSCommunication
                 Console.WriteLine("NotifySubscribersForMPUBehave : " + ex.ToString());
             }
         }
-
-
-
+        
         private void NotifySubscribersForResetDistanceCounter(bool value)
         {
             try
@@ -877,6 +965,19 @@ namespace M3YBSCommunication
 
             return stationFilePathName;
         }
+
+        public string LearnMPUStatus(string MPUName)
+        {
+            string durum = "Undefined";
+
+            if (MPUName == "MPU")
+                durum = MpuStatus;
+            else if(MPUName == "MPU_RED")
+                durum = MpuRedStatus;
+
+            return durum;
+        }
+
 
         public Enums.StationName ConvertStationNameStringToEnum(string stationName)
         {

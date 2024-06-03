@@ -27,6 +27,9 @@ namespace M3YBSCommunication
         string HeartBeatWithConnectionCheck(string heartBeat, Enums.Communication communication, Enums.Connection connectionStatus);
 
         [OperationContract()]
+        string HeartBeatWithConnectionAndMPUStatusCheck(string heartBeat, Enums.Communication communication, Enums.Connection connectionStatus, Enums.MPUType mpuType);
+
+        [OperationContract()]
         void MPUStatus(MPU mpu);
 
         [OperationContract()]
@@ -46,7 +49,10 @@ namespace M3YBSCommunication
         [OperationContract()]
         int GetMasterVolume();
         [OperationContract()]
-        bool GetMasterVolumeMute(); 
+        bool GetMasterVolumeMute();
+
+        [OperationContract()]
+        string LearnMPUStatus(string MPUName);
 
         [OperationContract(IsOneWay = true)]
         void AnnouncementStatus(AnnouncementDTO announcementDTO);
