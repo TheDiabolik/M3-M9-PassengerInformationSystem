@@ -53,6 +53,12 @@
   <wsdl:message name="IM3YBSCommunication_HeartBeatWithConnectionCheck_OutputMessage">
     <wsdl:part name="parameters" element="tns:HeartBeatWithConnectionCheckResponse" />
   </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_HeartBeatWithConnectionAndMPUStatusCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:HeartBeatWithConnectionAndMPUStatusCheck" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_HeartBeatWithConnectionAndMPUStatusCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HeartBeatWithConnectionAndMPUStatusCheckResponse" />
+  </wsdl:message>
   <wsdl:message name="IM3YBSCommunication_MPUStatus_InputMessage">
     <wsdl:part name="parameters" element="tns:MPUStatus" />
   </wsdl:message>
@@ -100,6 +106,12 @@
   </wsdl:message>
   <wsdl:message name="IM3YBSCommunication_GetMasterVolumeMute_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMasterVolumeMuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_LearnMPUStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:LearnMPUStatus" />
+  </wsdl:message>
+  <wsdl:message name="IM3YBSCommunication_LearnMPUStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LearnMPUStatusResponse" />
   </wsdl:message>
   <wsdl:message name="IM3YBSCommunication_AnnouncementStatus_InputMessage">
     <wsdl:part name="parameters" element="tns:AnnouncementStatus" />
@@ -198,6 +210,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionCheck" message="tns:IM3YBSCommunication_HeartBeatWithConnectionCheck_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionCheckResponse" message="tns:IM3YBSCommunication_HeartBeatWithConnectionCheck_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="HeartBeatWithConnectionAndMPUStatusCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionAndMPUStatusCheck" message="tns:IM3YBSCommunication_HeartBeatWithConnectionAndMPUStatusCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionAndMPUStatusCheckResponse" message="tns:IM3YBSCommunication_HeartBeatWithConnectionAndMPUStatusCheck_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="MPUStatus">
       <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPUStatus" message="tns:IM3YBSCommunication_MPUStatus_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/MPUStatusResponse" message="tns:IM3YBSCommunication_MPUStatus_OutputMessage" />
@@ -231,6 +247,10 @@
     <wsdl:operation name="GetMasterVolumeMute">
       <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/GetMasterVolumeMute" message="tns:IM3YBSCommunication_GetMasterVolumeMute_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/GetMasterVolumeMuteResponse" message="tns:IM3YBSCommunication_GetMasterVolumeMute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LearnMPUStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/LearnMPUStatus" message="tns:IM3YBSCommunication_LearnMPUStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IM3YBSCommunication/LearnMPUStatusResponse" message="tns:IM3YBSCommunication_LearnMPUStatus_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AnnouncementStatus">
       <wsdl:input wsaw:Action="http://tempuri.org/IM3YBSCommunication/AnnouncementStatus" message="tns:IM3YBSCommunication_AnnouncementStatus_InputMessage" />
@@ -359,6 +379,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="HeartBeatWithConnectionAndMPUStatusCheck">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionAndMPUStatusCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="MPUStatus">
       <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/MPUStatus" style="document" />
       <wsdl:input>
@@ -427,6 +456,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetMasterVolumeMute">
       <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/GetMasterVolumeMute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LearnMPUStatus">
+      <soap12:operation soapAction="http://tempuri.org/IM3YBSCommunication/LearnMPUStatus" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -38,6 +38,20 @@ namespace AnnounceMaker.MPUService {
         CONNECTION_LOST = 2,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Enums.MPUType", Namespace="http://schemas.datacontract.org/2004/07/M3YBSCommunication")]
+    public enum EnumsMPUType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Undefined = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Master = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Slave = 2,
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="MPU", Namespace="http://schemas.datacontract.org/2004/07/M3YBSCommunication")]
@@ -307,20 +321,6 @@ namespace AnnounceMaker.MPUService {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Enums.MPUType", Namespace="http://schemas.datacontract.org/2004/07/M3YBSCommunication")]
-    public enum EnumsMPUType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Undefined = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Master = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Slave = 2,
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AnnouncementDTO", Namespace="http://schemas.datacontract.org/2004/07/M3YBSCommunication")]
@@ -522,13 +522,13 @@ namespace AnnounceMaker.MPUService {
         Haznedar = 16,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Bakırköyİncirli = 17,
+        İncirli = 17,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ÖzgürlükMeydanı = 18,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        BakırköyİDO = 19,
+        BakırköySahil = 19,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Ataköy = 20,
@@ -537,10 +537,10 @@ namespace AnnounceMaker.MPUService {
         Yenibosna = 21,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ÇobançeşmeKuyumcukent = 22,
+        Çobançeşme = 22,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        İhlasYuva = 23,
+        YirmiDokuzEkimCumhuriyet = 23,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         DoğuSanayi = 24,
@@ -627,6 +627,14 @@ namespace AnnounceMaker.MPUService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionCheck", ReplyAction="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionCheckResponse")]
         System.Threading.Tasks.Task<string> HeartBeatWithConnectionCheckAsync(string heartBeat, AnnounceMaker.MPUService.EnumsCommunication communication, AnnounceMaker.MPUService.EnumsConnection connectionStatus);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionAndMPUStatusCheck", ReplyAction="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionAndMPUStatusCheckRe" +
+            "sponse")]
+        string HeartBeatWithConnectionAndMPUStatusCheck(string heartBeat, AnnounceMaker.MPUService.EnumsCommunication communication, AnnounceMaker.MPUService.EnumsConnection connectionStatus, AnnounceMaker.MPUService.EnumsMPUType mpuType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionAndMPUStatusCheck", ReplyAction="http://tempuri.org/IM3YBSCommunication/HeartBeatWithConnectionAndMPUStatusCheckRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<string> HeartBeatWithConnectionAndMPUStatusCheckAsync(string heartBeat, AnnounceMaker.MPUService.EnumsCommunication communication, AnnounceMaker.MPUService.EnumsConnection connectionStatus, AnnounceMaker.MPUService.EnumsMPUType mpuType);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IM3YBSCommunication/MPUStatus", ReplyAction="http://tempuri.org/IM3YBSCommunication/MPUStatusResponse")]
         void MPUStatus(AnnounceMaker.MPUService.MPU mpu);
         
@@ -680,6 +688,12 @@ namespace AnnounceMaker.MPUService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IM3YBSCommunication/GetMasterVolumeMute", ReplyAction="http://tempuri.org/IM3YBSCommunication/GetMasterVolumeMuteResponse")]
         System.Threading.Tasks.Task<bool> GetMasterVolumeMuteAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IM3YBSCommunication/LearnMPUStatus", ReplyAction="http://tempuri.org/IM3YBSCommunication/LearnMPUStatusResponse")]
+        string LearnMPUStatus(string MPUName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IM3YBSCommunication/LearnMPUStatus", ReplyAction="http://tempuri.org/IM3YBSCommunication/LearnMPUStatusResponse")]
+        System.Threading.Tasks.Task<string> LearnMPUStatusAsync(string MPUName);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IM3YBSCommunication/AnnouncementStatus")]
         void AnnouncementStatus(AnnounceMaker.MPUService.AnnouncementDTO announcementDTO);
@@ -837,6 +851,14 @@ namespace AnnounceMaker.MPUService {
             return base.Channel.HeartBeatWithConnectionCheckAsync(heartBeat, communication, connectionStatus);
         }
         
+        public string HeartBeatWithConnectionAndMPUStatusCheck(string heartBeat, AnnounceMaker.MPUService.EnumsCommunication communication, AnnounceMaker.MPUService.EnumsConnection connectionStatus, AnnounceMaker.MPUService.EnumsMPUType mpuType) {
+            return base.Channel.HeartBeatWithConnectionAndMPUStatusCheck(heartBeat, communication, connectionStatus, mpuType);
+        }
+        
+        public System.Threading.Tasks.Task<string> HeartBeatWithConnectionAndMPUStatusCheckAsync(string heartBeat, AnnounceMaker.MPUService.EnumsCommunication communication, AnnounceMaker.MPUService.EnumsConnection connectionStatus, AnnounceMaker.MPUService.EnumsMPUType mpuType) {
+            return base.Channel.HeartBeatWithConnectionAndMPUStatusCheckAsync(heartBeat, communication, connectionStatus, mpuType);
+        }
+        
         public void MPUStatus(AnnounceMaker.MPUService.MPU mpu) {
             base.Channel.MPUStatus(mpu);
         }
@@ -907,6 +929,14 @@ namespace AnnounceMaker.MPUService {
         
         public System.Threading.Tasks.Task<bool> GetMasterVolumeMuteAsync() {
             return base.Channel.GetMasterVolumeMuteAsync();
+        }
+        
+        public string LearnMPUStatus(string MPUName) {
+            return base.Channel.LearnMPUStatus(MPUName);
+        }
+        
+        public System.Threading.Tasks.Task<string> LearnMPUStatusAsync(string MPUName) {
+            return base.Channel.LearnMPUStatusAsync(MPUName);
         }
         
         public void AnnouncementStatus(AnnounceMaker.MPUService.AnnouncementDTO announcementDTO) {

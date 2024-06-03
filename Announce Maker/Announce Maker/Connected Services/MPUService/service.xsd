@@ -79,10 +79,27 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="HeartBeatWithConnectionAndMPUStatusCheck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="heartBeat" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q3:Enums.Communication" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="connectionStatus" type="q4:Enums.Connection" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="mpuType" type="q5:Enums.MPUType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HeartBeatWithConnectionAndMPUStatusCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HeartBeatWithConnectionAndMPUStatusCheckResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="MPUStatus">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="mpu" nillable="true" type="q3:MPU" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="mpu" nillable="true" type="q6:MPU" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -94,8 +111,8 @@
   <xs:element name="MPUConnectionStatus">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q4:Enums.Communication" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="connectionStatus" type="q5:Enums.Connection" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q7:Enums.Communication" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="connectionStatus" type="q8:Enums.Connection" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -107,8 +124,8 @@
   <xs:element name="MPUBehaviorStatus">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q6:Enums.Communication" />
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="MPUType" type="q7:Enums.MPUType" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q9:Enums.Communication" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="MPUType" type="q10:Enums.MPUType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -133,14 +150,14 @@
   <xs:element name="AddOrFindInRedundancyMPU">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="mpu" nillable="true" type="q8:MPU" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="mpu" nillable="true" type="q11:MPU" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddOrFindInRedundancyMPUResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="AddOrFindInRedundancyMPUResult" nillable="true" type="q9:MPU" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="AddOrFindInRedundancyMPUResult" nillable="true" type="q12:MPU" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -182,17 +199,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="LearnMPUStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MPUName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LearnMPUStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LearnMPUStatusResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AnnouncementStatus">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="announcementDTO" type="q10:AnnouncementDTO" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="announcementDTO" type="q13:AnnouncementDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ConvertStationNameEnumToString">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="stationName" type="q11:Enums.StationName" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="stationName" type="q14:Enums.StationName" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -213,23 +244,23 @@
   <xs:element name="ConvertStationNameStringToEnumResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="ConvertStationNameStringToEnumResult" type="q12:Enums.StationName" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="ConvertStationNameStringToEnumResult" type="q15:Enums.StationName" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="MPUConnectionStatusChanged">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q13:Enums.Communication" />
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="connection" type="q14:Enums.Connection" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q16:Enums.Communication" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="connection" type="q17:Enums.Connection" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="MPUBehaviorChanged">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q15:Enums.Communication" />
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="MPUType" type="q16:Enums.MPUType" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="communication" type="q18:Enums.Communication" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="MPUType" type="q19:Enums.MPUType" />
         <xs:element minOccurs="0" name="masterMPUName" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -351,7 +382,7 @@
   <xs:element name="AnnouncementStatusChanged">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="announcementDTO" type="q17:AnnouncementDTO" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/M3YBSCommunication" minOccurs="0" name="announcementDTO" type="q20:AnnouncementDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
