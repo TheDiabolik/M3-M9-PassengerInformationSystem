@@ -1,10 +1,12 @@
 ﻿using NAudio.Wave;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AnnounceMaker
 {
@@ -33,18 +35,26 @@ namespace AnnounceMaker
 
         public static void PlayWavFile()
         {
-            MainForm.m_mf.soundPlayer.SoundLocation = MainForm.m_mf.m_announceFilePath;
+            try
+            {
+                MainForm.m_mf.soundPlayer.SoundLocation = MainForm.m_mf.m_announceFilePath;
 
-            if (MainForm.m_mf.m_announceDTO.status == MPUService.EnumsAnnouncement.Play)
-            {
-                if (MainForm.m_mf.m_settings.PlaySync)
-                    MainForm.m_mf.soundPlayer.PlaySync();
+                if (MainForm.m_mf.m_announceDTO.status == MPUService.EnumsAnnouncement.Play)
+                {
+                    if (MainForm.m_mf.m_settings.PlaySync)
+                        MainForm.m_mf.soundPlayer.PlaySync();
+                    else
+                        MainForm.m_mf.soundPlayer.Play();
+                }
                 else
-                    MainForm.m_mf.soundPlayer.Play();
+                {
+                    MainForm.m_mf.soundPlayer.Stop();
+                }
             }
-            else
+           catch (Exception ex)
             {
-                MainForm.m_mf.soundPlayer.Stop();
+                DisplayManager.RichTextBoxWithAppendLineInvoke(MainForm.m_mf.m_richTextBox, ex.ToString(), Color.Black);
+
             }
         }
 
@@ -142,7 +152,7 @@ namespace AnnounceMaker
         public static void PlayInsideAnnounce()
         {
             if (!MainForm.m_mf.m_test)
-            {  
+            {
                 if (MainForm.m_mf.m_amplifier == "H")
                 {
                     if (MainForm.m_mf.m_timer.Enabled)
@@ -153,15 +163,15 @@ namespace AnnounceMaker
                     int wavFileLongAsAMilliSeconds = AnnounceHelper.FindWavFileLongAsAMilliSeconds(MainForm.m_mf.m_announceFilePath);
 
 
-                    DisplayManager.RichTextBoxInvokeWithLine(MainForm.m_mf.m_richTextBox, "Anons Çalınıyor; " + (wavFileLongAsAMilliSeconds / 1000).ToString() + 
-                        " Saniye Sonra Kanal Kapatma Talebi Gönderilecek!"); 
-
+                    DisplayManager.RichTextBoxInvokeWithLine(MainForm.m_mf.m_richTextBox, "Anons Çalınıyor; " + (wavFileLongAsAMilliSeconds / 1000).ToString() +
+                        " Saniye Sonra Kanal Kapatma Talebi Gönderilecek!");
 
                     MainForm.m_mf.m_timer.Interval = (wavFileLongAsAMilliSeconds + 1000);
 
                     if (!MainForm.m_mf.m_timer.Enabled)
-                        MainForm.m_mf.m_timer.Start(); ;
-                } 
+                        MainForm.m_mf.m_timer.Start();
+
+                }
             }
         } 
 

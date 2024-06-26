@@ -27,6 +27,7 @@ namespace AnnounceMaker
         public MPUService.M3YBSCommunicationClient m_client;
 
         internal System.Timers.Timer m_timerCheckMPURedundancyServiceConnectionStatus;
+        internal System.Timers.Timer m_timer;
         public Stopwatch m_stopWatchRedundancyService;
 
         public MPUService.AnnouncementDTO m_announceDTO;
@@ -65,6 +66,9 @@ namespace AnnounceMaker
 
             m_timerCheckMPURedundancyServiceConnectionStatus = new System.Timers.Timer(3000);
             m_timerCheckMPURedundancyServiceConnectionStatus.Elapsed += m_timerCheckMPUConnectionStatus_Elapsed;
+
+            m_timer = new System.Timers.Timer();
+            m_timer.Elapsed += m_timer_Tick;
 
 
             SerialPortDTO serialPortDTO = new SerialPortDTO();
@@ -431,13 +435,16 @@ namespace AnnounceMaker
 
         private void m_timer_Tick(object sender, EventArgs e)
         { 
-            m_timer.Stop(); 
+            m_timer.Stop();
 
             this.Invoke(new MethodInvoker(delegate ()
             {
-
                 if(m_serialPort.IsOpen)
-                    m_serialPort.Write("6"); 
+                {
+                    m_serialPort.Write("6");
+                    m_serialPort.DiscardInBuffer();
+                    m_serialPort.DiscardOutBuffer();
+                }
             }));
 
             AnnounceHelper.SendCloseChannelRequestUI();

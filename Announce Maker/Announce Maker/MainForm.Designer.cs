@@ -36,6 +36,8 @@
             this.m_openSerialPortItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_closeSerialPortItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_settingsPopup = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_generalSettingsItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.m_communicationItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_aboutPopup = new System.Windows.Forms.ToolStripMenuItem();
             this.m_generalPopup = new System.Windows.Forms.ToolStripMenuItem();
             this.m_statusStrip = new System.Windows.Forms.StatusStrip();
@@ -46,14 +48,8 @@
             this.m_toolStripStatusLabelSerialPort = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_toolStripStatusLabelSerialPortStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.m_serialPort = new System.IO.Ports.SerialPort(this.components);
-            this.m_timer = new System.Windows.Forms.Timer(this.components);
+           
             this.m_groupBoxAmplifier = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.m_generalSettingsItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.m_communicationItem = new System.Windows.Forms.ToolStripMenuItem();
             this.m_buttonFirst = new System.Windows.Forms.Button();
             this.m_buttonPlay = new System.Windows.Forms.Button();
             this.m_buttonSecond = new System.Windows.Forms.Button();
@@ -61,6 +57,10 @@
             this.m_buttonThird = new System.Windows.Forms.Button();
             this.m_buttonFifth = new System.Windows.Forms.Button();
             this.m_buttonFourth = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.m_mainMenu.SuspendLayout();
             this.m_statusStrip.SuspendLayout();
             this.m_groupBoxAmplifier.SuspendLayout();
@@ -120,6 +120,22 @@
             this.m_settingsPopup.Size = new System.Drawing.Size(56, 20);
             this.m_settingsPopup.Text = "Ayarlar";
             this.m_settingsPopup.Click += new System.EventHandler(this.m_settingsPopup_Click);
+            // 
+            // m_generalSettingsItem
+            // 
+            this.m_generalSettingsItem.Image = global::AnnounceMaker.Properties.Resources._185096_settings_icon;
+            this.m_generalSettingsItem.Name = "m_generalSettingsItem";
+            this.m_generalSettingsItem.Size = new System.Drawing.Size(118, 22);
+            this.m_generalSettingsItem.Text = "Genel";
+            this.m_generalSettingsItem.Click += new System.EventHandler(this.m_generalSettingsItem_Click);
+            // 
+            // m_communicationItem
+            // 
+            this.m_communicationItem.Image = global::AnnounceMaker.Properties.Resources._8675347_fluent_serial_port_regular_icon;
+            this.m_communicationItem.Name = "m_communicationItem";
+            this.m_communicationItem.Size = new System.Drawing.Size(118, 22);
+            this.m_communicationItem.Text = "Seri Port";
+            this.m_communicationItem.Click += new System.EventHandler(this.m_communicationItem_Click);
             // 
             // m_aboutPopup
             // 
@@ -189,10 +205,6 @@
             // 
             this.m_serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.m_serialPort_DataReceived);
             // 
-            // m_timer
-            // 
-            this.m_timer.Tick += new System.EventHandler(this.m_timer_Tick);
-            // 
             // m_groupBoxAmplifier
             // 
             this.m_groupBoxAmplifier.Controls.Add(this.m_buttonFirst);
@@ -208,50 +220,6 @@
             this.m_groupBoxAmplifier.TabIndex = 37;
             this.m_groupBoxAmplifier.TabStop = false;
             this.m_groupBoxAmplifier.Text = "Amfi Test";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 0;
-            // 
-            // m_generalSettingsItem
-            // 
-            this.m_generalSettingsItem.Image = global::AnnounceMaker.Properties.Resources._185096_settings_icon;
-            this.m_generalSettingsItem.Name = "m_generalSettingsItem";
-            this.m_generalSettingsItem.Size = new System.Drawing.Size(180, 22);
-            this.m_generalSettingsItem.Text = "Genel";
-            this.m_generalSettingsItem.Click += new System.EventHandler(this.m_generalSettingsItem_Click);
-            // 
-            // m_communicationItem
-            // 
-            this.m_communicationItem.Image = global::AnnounceMaker.Properties.Resources._8675347_fluent_serial_port_regular_icon;
-            this.m_communicationItem.Name = "m_communicationItem";
-            this.m_communicationItem.Size = new System.Drawing.Size(180, 22);
-            this.m_communicationItem.Text = "Seri Port";
-            this.m_communicationItem.Click += new System.EventHandler(this.m_communicationItem_Click);
             // 
             // m_buttonFirst
             // 
@@ -330,6 +298,34 @@
             this.m_buttonFourth.UseVisualStyleBackColor = true;
             this.m_buttonFourth.Click += new System.EventHandler(this.channelButtons_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,6 +341,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Announce Maker v1.2";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.m_mainMenu.ResumeLayout(false);
@@ -375,7 +372,6 @@
         private System.Windows.Forms.ToolStripMenuItem m_closeSerialPortItem;
         private System.Windows.Forms.GroupBox m_groupBoxAmplifier;
         public System.IO.Ports.SerialPort m_serialPort;
-        public System.Windows.Forms.Timer m_timer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
